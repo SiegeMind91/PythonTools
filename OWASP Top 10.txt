@@ -1,0 +1,6 @@
+OWASP Top 10
+    + A list of the top 10 most common web application vulnerabilities
+    + Created by the Open Web Application Security Project
+    + https://owasp.org/www-project-top-ten 
+    + Allows us to focuse resources to prevent common threats
+    
