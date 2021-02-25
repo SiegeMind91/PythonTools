@@ -1,0 +1,31 @@
+Sorting Algorithms 
+
+Why Study Sorting Algorithms
+    + More of an academic exercise meant to test knowledge of computer 
+        science fundamentals 
+    + Implementing sorting algorithms can be tricky, as can trying to explain 
+        the differences between them; interviewers want to test your knowledge 
+        and communication skills 
+    
+Insertion Sort 
+    + Simple 
+    + Best used on shorter or almost-sorted lists 
+    + Looks at one list element per iteration and grows a sorted output list by 
+        placing the element in its correct position. 
+    + Sorts in place, so memory usage is low 
+    + However, runtime is O(n^2) (one of the worst types)
+
+Merge Sort 
+    + Efficient, general purpose, comparison based 
+    + Breaks a list down into individual elements 
+    + Puts elements into sorted pairs untl the list is in order 
+    + Memory usuage is O(n) - Linear Time 
+    + Average runtime is O(n log n)
+
+Quick Sort 
+    + Comparison based, divide and conquer 
+    + Chooses a "pivot" in the list 
+    + Moves all elements that are smaller than the pivot to the left of the pivot 
+    + Sorts in place, so memory usage is low 
+    + Average runtime is O(n log n) (Superlinear time)
+    

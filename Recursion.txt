@@ -1,0 +1,23 @@
+Recursion 
+
+Recursion - an elegant method of solving a problem where the solution 
+    depends on solutions to smaller occurrences of the same problem 
+
+How to Approach Recursion
+    1. Divide a problem into subproblems 
+        a. Must be the same type as the original
+    2. Solve those subproblems 
+    3. Combine the results to solve the original 
+
+Parts of a Recursive Solution
+    1. Base case/degenerate case 
+        a. "How do I know when I'm done recursing?"
+        b. Smallest slice of the problem is treated differently
+    2. Recursive case/progress
+        a. Continue reducing the problem until reaching the base case 
+
+Example:
+    def get_list_length(my_list):
+        if my_list ==[]  <----- Base Case 
+            return 0
+        return 1 + get_list_length(my_list[1:]) <---- Progress - slicing off the first character of the list and passing the rest to the recursive function

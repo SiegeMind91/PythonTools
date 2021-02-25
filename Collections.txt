@@ -1,0 +1,37 @@
+Interview Notes 
+
+Collections - Properties and methods to keep top-of-mind 
+    + Tuples - (5, 6, 'frosting', 'cupcake')
+        - Immutable
+        - Ordered
+        - Iterable 
+        - my_tuple[0] 
+        - len(my_tuple)
+        - my_tuple.count()
+        - my_tuple.index()
+    + Lists - [5, 6, 'frosting', 'cupcake']
+        - Mutable
+        - Ordered 
+        - Iterable 
+        - my_list[0]
+        - len(my_list)
+        - .append() and .insert() 
+        - .pop() and .remove() 
+        - .reverse() and .sort()
+    + Dictionaries - {'num_cupcakes':5, 'frosting_servings':6}
+        - Key and Value pairs 
+        - Mutable
+        - Iterable 
+        - my_dict['num_cupcakes']
+        - .keys() and .values() and .items()
+        - .pop()
+        - del my_dict['some_key']
+    + Sets - {5, 6, 'cupcakes', 'frosting'}
+        - Only hold unique values 
+        - Mutable 
+        - Unordered - no indexing 
+        - Iterable 
+        - .add() and .update()
+        - .remove()
+        - .intersection() and .difference()
+    

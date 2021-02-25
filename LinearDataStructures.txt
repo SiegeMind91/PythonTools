@@ -1,0 +1,46 @@
+Linear Data Structures 
+
+Why Study Linear Data Structures?
+    + Coding challenges that make use of linear data structures are 
+        common in technical interviews for entry-level roles
+    + Some interviewers believe a candidates knowledge of data structures 
+        is indicative of the depth of their knowledge about computer science 
+        topics
+    + Sometimes a common data structure may be an ideal tool to help 
+        solve a problem, whether in a technical interview or in a real product
+
+Stacks - Like a stack of pancakes 
+    + Last In, First Out (LIFO)
+    + Add and remove items in constant time 
+    + Maintain items in the order they were added 
+    + Best Use Case:
+        - When you want quick access to the most recent item and need to keep the 
+            items in order 
+
+Queues - Like a line of people 
+    + First In, First Out (FIFO)
+    + Add items in constant time; remove items in linear time 
+    + Maintain items in order they were added 
+    + Best Use Case:
+        - When you want to process the items in the order in which they were added 
+    
+Singly Linked List 
+    + Made of a series of connected nodes 
+    + Can only move forward through the connected nodes 
+    + Adds and removes nodes before or after any key in the linked list 
+    + Maintains items in order, based on when/where you add nodes 
+        + Best Use Case:
+            - Unknown number of items to store 
+            - One-directional movement is OK
+            - Need to insert items between other items 
+            - Sequential access is OK 
+
+Doubly Linked List 
+    + Made of a series of connected nodes 
+    + Can move forward and backward thourhg the connected nodes 
+    + Adds and removes nodes before or after any key in the linked list
+    + Maintains items in order, based on when/where you add nodes 
+        + Best Use Case:
+            - Unknown number of items to store 
+            - Need to insert items in between other items 
+            - Sequential access is OK 

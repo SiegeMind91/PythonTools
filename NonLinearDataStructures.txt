@@ -1,0 +1,41 @@
+Non-Linear Data Structures 
+
+Why Study Non-Linear Data Structures?
+    + Coding challenges that make use of non-linear data structures are 
+        common in technical interviews for entry-level roles
+    + Some interviewers believe a candidates knowledge of data structures 
+        is indicative of the depth of their knowledge about computer science 
+        topics
+    + Sometimes a common data structure may be an ideal tool to help 
+        solve a problem, whether in a technical interview or in a real product
+
+Trees 
+    + Simulates a hierarchical tree structure, with a root node and zero or 1+ subtrees 
+    + Parent, child, and sibling nodes 
+    + Best Use Case:
+        - Use a tree when you need to store data hierarchically
+            - Ex: Classic example are a family tree and a predator/prey diagram 
+    
+Binary Search Trees 
+    + Root node is roughly the midpoint 
+    + Smaller nodes on the left, larger nodes on the right 
+    + Takes O(log n) comparisons to find a specific node (because, remember, it's a binary search)
+    + Worst case search is O(h)
+    + Best Use Case:
+        - When you need to store hierarchical data in a way that is easily and quickly searchable 
+
+Graphs
+    + A finite set of nodes (points) connected by lines (edges)
+    + The edges can optionally have values 
+    + Best Use Case:
+        - When you need to store data in a way that captures relationships between nodes 
+            Ex: Classic example of this is a social network 
+
+Hash Maps 
+    + Map keys to values 
+    + A hash function "converts" the key into an index 
+    + This index is used to find the key's value 
+    + Search, add, and delete in O(1) Constant Time 
+    + Best Use Case:
+        - When you need to store data based on a key that can be used to retrieve the data later 
+            - Ex: Python dictionaries map keys to values using a similar technique 

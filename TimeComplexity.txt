@@ -1,0 +1,35 @@
+Time Complexity 
+    - Describes the amount of time it takes to run an algorithm in the 
+        worst-case scenario, compared to the length of the input
+
+Common Runtimes
+    + O(1) - Constant Time - Best results 
+        - my_favorite_desserts = {'cake':1, 'cookies':2}
+        - print(my_favorite_desserts['cake'])
+        - Many simple checks and assignments are O(1)
+    + O(log n) - Logarithmic Time - Better results
+        - Binary search is O(log n) in the worst case because each time you
+            eliminate options, you eliminate half of them 
+        - Keep in mind this is log base 2
+    + O(n) - Linear Time - Good Results 
+        - my_favorite_desserts = ['cake', 'cookies', 'brownies']
+          for dessert in my_favorite_desserts:
+            print(dessert)
+        - Simple for loops are almost always O(n)
+    + O(n^2) - Polynomial Time - One of the worst run times 
+        - my_favorite_desserts = ['cake', 'cookies', 'brownies']
+          quantities = [5, 10, 20]
+          for dessert in my_favorite_desserts:
+            for quantity in quantities:
+               print(quantity + ' ' + dessert)
+        - Nested loops like this one are O(n^2)
+    + Other common runtimes: - Bad results 
+        - O(n log n) - Superlinear Time 
+        - O(2^n) - Exponential Time 
+        - O(n!) - Factorial Time
+    
+Putting it all together
+    - Q: How do we know which time complexity the solution is if there are two or 
+        more time complexities present?
+    - A: The time complexity will be the worst (slowest) one present within the solution
+        because we always want to know the worst-case runtime.  

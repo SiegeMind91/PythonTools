@@ -1,0 +1,44 @@
+Searching Algorithms 
+
+Why Study Searching Algorithms  
+    + Coding challenges that make use of searching algorithms are common 
+        in technical interviews 
+    + Implementing searching algorithms can be tricky, as can trying to 
+        explain the differences between them; interviewers want to test 
+        your knowledge and communication skills 
+
+Binary Search
+    + Compares the target value to the middle element in a sorted list 
+    + If they're not equal, the half in which the target value cannot 
+        exist is eliminated
+    + The midpoint search is performed recursively on the remaining half 
+        until the target value is found (or not found)
+    + Worse-case runtime is O(log n) (Logarithmic time)
+    + Best Use Case:
+        - Looking for a node in a binary search tree 
+        - Finding an element in a list that's already sorted 
+
+Breadth-First Search of Trees 
+    + An algorithm for traversing trees and graphs 
+    + Starts at the root node and explores all sibling nodes before 
+        moving on to the next level of siblings 
+    + Looks at the top node, then moves down a level and looks at all of 
+        the nodes on those levels, then continues on in this fashion until 
+        the object is found/not found 
+    + Best Use Case:
+        - Finding the shortest path between two nodes in a tree or in an 
+            unweighted graph
+        - Don't use it on a graph or tree with a high branching factor, since 
+            all current nodes are kept in memory 
+
+Depth-First Search of Trees 
+    + An algorithm for traversing trees and graphs 
+    + Starts at the root node and explores as far down the path as possible 
+        until hitting the end, then backtracks to the node that was the most 
+        recent "root" node and explores again 
+    + Best Use Case:
+        - When exhaustively exploring every possible path 
+        - When looking for the longest path between two nodes 
+        - When backtracking is important
+        - Don't use it on very deep (or infinitely deep) graphs as you may hit 
+            the max recursion depth before you find what you're looking for 
