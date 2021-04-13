@@ -1,0 +1,28 @@
+import os
+import platform
+import cx_Oracle
+import pandas as pd
+import time
+import timeit
+
+# This is the path to the ORACLE client files
+lib_dir = r"C:\Users\546246\Downloads\instantclient-basic-windows.x64-19.10.0.0.0dbru\instantclient_19_10"
+
+cx_Oracle.init_oracle_client(lib_dir=lib_dir)
+ 
+dsn_tns = cx_Oracle.makedsn(host=r'clusterp-rac05-scan.wst.corproot.com',port='4065', service_name='IRISPRD') 
+conn = cx_Oracle.connect(user=r'546246', password=r'Stup1dPassw?rd', dsn=dsn_tns,threaded=True) 
+
+c = """
+Select RES.CONFIRMATION_NUM,
+ RES.Book_DT,
+ RES.CHECKIN_DT,
+ RES.CHECKOUT_DT,
+ RES.CANCELLATION_DT,
+ RES.LENGTH_OF_STAY
+FROM RESERVATION RES 
+WHERE RES.CHECKIN_DT >=TO_DATE('20210412', 'yyyy/mm/dd')
+AND ROWNUM <= 100
+""" 
+
+df_ora = pd.read_sql(c, con=conn)
