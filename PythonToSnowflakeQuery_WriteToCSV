@@ -1,0 +1,49 @@
+import csv
+import snowflake.connector
+from snowflake.connector.errors import ProgrammingError
+
+con = snowflake.connector.connect(
+    user="123456@YourCompany.COM", #It's usually your WWID, but you can find it by going to the "Preferences" section of your account
+    account="Company-Name", #Add all of the account-name between https:// and snowflakecomputing.com
+    authenticator="externalbrowser",
+    role="YOUR_ROLE_GOES_HERE",
+    #warehouse="YOUR_WAREHOUSE",
+    #database="YOUR_DATABASE",
+    #schema="YOUR_SCHEMA"
+)
+
+#Create the cursor we'll use to navigate 
+cur = con.cursor()
+
+try:
+    cur.execute("SELECT TOP 1000 * FROM \"YOUR_DATABASE\".\"YOUR_SCHEMA\".\"YOUR_TABLE\"")
+
+    #Each time you execute a query, snowflake will create an id for it. That query ID can be accessed 
+    # if we're expecting the query to take a long time to execute or if we need to access the data of the same query later
+    # We can also cancel a running query using this id
+    print(cur.sfqid)
+    print(con.get_query_status_throw_if_error(cur.sfqid)) #This gives us the status of the query, if there's an error it will be thrown here 
+   
+    #The fetchall(), fetchmany(rowCount), and fetchone() methods will always wait for the query to be finished before returning a value
+    results=cur.fetchall()
+
+    # We can print the results all at once
+    print(f"Data: {results[0]}")
+
+    #Or we can loop through them to print by row
+    for row in results:
+        print(row)
+
+    # Or we can save them to a file
+    column_names = [i[0] for i in cur.description]
+    fp = open('samplefile.csv', 'w')
+    myFile = csv.writer(fp, lineterminator = '\n')
+    myFile.writerow(column_names)
+    myFile.writerows(results)
+    fp.close()
+
+except ProgrammingError as err:
+    print(f'Programming Error: {err}')
+finally:
+    cur.close()
+cur.close()
