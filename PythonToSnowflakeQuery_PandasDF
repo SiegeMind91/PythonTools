@@ -1,0 +1,42 @@
+import pandas as pd
+import snowflake.connector
+from snowflake.connector.errors import ProgrammingError
+
+con = snowflake.connector.connect(
+    user="123456@YourCompany.COM", #It's usually your WWID, but you can find it by going to the "Preferences" section of your account
+    account="Company_Name", #Add all of the account-name between https:// and snowflakecomputing.com
+    authenticator="externalbrowser",
+    role="YOUR_ROLE",
+    #warehouse="YOUR_WAREHOUSE",
+    #database="YOUR_DATABASE",
+    #schema="YOUR_DATABASE.YOUR_SCHEMA"
+)
+
+cur = con.cursor()
+
+try:
+    cur.execute("SELECT TOP 1000 * FROM \"YOUR_DATABASE\".\"YOUR_SCHEMA\".\"YOUR_TABLE\"")
+
+    #Each time you execute a query, snowflake will create an id for it. 
+    print(cur.sfqid)
+    print(con.get_query_status_throw_if_error(cur.sfqid)) #This gives us the status of the query, and will throw an error if there is one
+
+    #We can either immediately put the data into a dataframe to display
+    df=cur.fetch_pandas_all()
+    print(df) # We could also write print(df.toString()) which would allow us to customize the toString method
+
+    #Or if there's some manipulation we want to do to the data before we add it to a dataframe, we can migrate it back and forth between a dataframe and the string value
+    rows = 0
+    while True:
+        data = cur.fetchmany(1000) 
+        if not data:
+            break
+        df2 = pd.DataFrame(data, columns=cur.description)
+        rows += df2.shape[0]
+    print(rows)
+
+except ProgrammingError as err:
+    print(f'Programming Error: {err}')
+finally:
+    cur.close()
+cur.close()
