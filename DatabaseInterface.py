@@ -28,7 +28,7 @@ class chDB:
         self._db.execute(sql, params)
         self._db.commit()
 
-    # The main difference between do and nocommit is that both will write to the database, but only do will mark the end of the transaction
+    # The main difference between do and do_nocommit is that both will write to the database, but only do will mark the end of the transaction
     # Where as nocommit keeps open the transaction and can be added-to/edited/rolled-back before closing out
     def sql_do_nocommit(self, sql, params=()):
         """
