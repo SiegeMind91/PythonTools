@@ -1,0 +1,40 @@
+#RegEx isn't a tool that is limited to Python, but I wanted to showcase how to use it within the Python language. 
+
+#Here's a simple example, making sure that the entered string starts with a capital letter
+# Import re module
+import re
+
+# Take any string data
+string = input("Enter a string value: ")
+# Define the searching pattern
+pattern = '^[A-Z]'
+
+# match the pattern with input value
+found = re.match(pattern, string)
+
+# Print message based on the return value
+if found:
+  print("The input value is started with the capital letter")
+else:
+  print("You have to type string start with the capital letter"
+  
+  
+#Here's another example, it uses the search() function to check if the string starts with "The" and ends with "dog"
+import re
+
+txt = "The brown fox jumped over the lazy dog"
+pattern = "^The.*dog$"
+x = re.search(pattern, txt)
+
+If x:
+  print("Input was a pattern match!")
+else:
+  print("Input was not a pattern match")
+  
+  
+#This example uses the findall() function to find any matches of "ai" in the given string
+import re
+
+txt = "The rain in Spain"
+x = re.findall("ai", txt)
+print(x)
