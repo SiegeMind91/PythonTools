@@ -38,3 +38,19 @@ import re
 txt = "The rain in Spain"
 x = re.findall("ai", txt)
 print(x)
+
+
+#Finally, this example shows how we might find emails in a provided list or string:
+import re 
+  
+# Example string 
+s = """Hello from hotRocksAZ199630@gmail.com
+        to CampWorld123@yahoo.com about the meeting @2PM"""
+  
+# \S matches any non-whitespace character 
+# @ for as in the Email 
+# + for Repeats a character one or more times 
+lst = re.findall('\S+@\S+', s)     
+  
+# Printing of List 
+print(lst) 
